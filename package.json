@@ -1,0 +1,22 @@
+{
+  "name": "crypto-bruteforcer",
+  "version": "1.0.0",
+  "description": "Script to brute force the PIN to my crypto wallet from 5 years ago",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-vagabond/crypto-bruteforcer.git"
+  },
+  "author": "Linh Phung Hoang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/code-vagabond/crypto-bruteforcer/issues"
+  },
+  "homepage": "https://github.com/code-vagabond/crypto-bruteforcer#readme",
+  "dependencies": {
+    "robotjs": "^0.6.0"
+  }
+}
