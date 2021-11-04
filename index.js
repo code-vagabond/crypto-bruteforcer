@@ -3,6 +3,7 @@ const robot = require('robotjs');
 
 // The middle of the number 1 in numpad
 const NUMAPAD_CALIBRATION_XY = {x: 696, y:348}
+const ENTER_BUTTON = {x: 768, y: 457}
 const DISTANCE_BEETWEEN_NUMBERS = 100; // Assume horizontal and vertical distances are the same
 const PIN_MAX = 999999;
 const START_AT = 0;
@@ -20,10 +21,15 @@ start()
 
 function start() {
     for (let i = START_AT; i <END_AT; i++) {
+        clickEnter();
         click(i);
     }
 }
 
+function clickEnter() {
+    const {x, y} = ENTER_BUTTON;
+    robot.moveMouse(x, y)
+}
 
 function click(number) {
         if (number <= PIN_MAX) {
