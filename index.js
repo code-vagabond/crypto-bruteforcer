@@ -4,29 +4,51 @@ const robot = require('robotjs');
 // The middle of the number 1 in numpad
 const NUMAPAD_CALIBRATION_XY = {x:25, y:180}
 const DISTANCE_BEETWEEN_NUMBERS = 60; // Assume horizontal and vertical distances are the same
-
+const PIN_MAX = 999999;
+const START_AT = 0;
+const END_AT = 9;
 
 
 const numpadPositions = generateNumpadPositions();
 
-console.log(numpadPositions)
 
-click(numpadPositions[1])
-testNumpadClicks(numpadPositions)
+// click(131999);
+// click(12)
+// click(1000)
+start()
 
 
-function testNumpadClicks(numpadPositions) {
-    for (let i = 0; i < 10; i++) {
-        click(numpadPositions[i]);
-        console.log('Clicked ', i)
+function start() {
+    for (let i = START_AT; i <END_AT; i++) {
+        click(i);
     }
 }
 
 
-function click(coordinates) {
-    console.log(coordinates)
+function click(number) {
+        if (number <= PIN_MAX) {
+            const clickSequence = generateClickSequence(number)
+            console.log('Inputting PIN ', clickSequence)
+            for (let i = 0; i < clickSequence.length; i++){
+                const c = clickSequence.charAt(i);
+                _clickDigit(number)
+            }
+        }
+}
+
+function _clickDigit(number) {
+    const coordinates = numpadPositions[number];
     robot.moveMouse(coordinates.x, coordinates.y)
     robot.mouseClick()
+}
+
+function generateClickSequence(number) {
+    let numberStr = number.toString();
+    const missingZerosCount = PIN_MAX.toString().length - numberStr.length;
+    for (let i = 0; i < missingZerosCount; i++) {
+        numberStr = "0" + numberStr; 
+    }
+    return numberStr;
 }
 
 
