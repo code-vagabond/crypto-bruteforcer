@@ -22,13 +22,16 @@ start()
 function start() {
     for (let i = START_AT; i <END_AT; i++) {
         clickEnter();
+        sleep(200);
         click(i);
+        sleep(200);
     }
 }
 
 function clickEnter() {
     const {x, y} = ENTER_BUTTON;
-    robot.moveMouse(x, y)
+    robot.moveMouse(x, y);
+    robot.mouseClick();
 }
 
 function click(number) {
@@ -55,6 +58,10 @@ function generateClickSequence(number) {
         numberStr = "0" + numberStr; 
     }
     return numberStr;
+}
+
+function sleep(ms) {
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
 }
 
 
