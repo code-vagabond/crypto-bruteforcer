@@ -2,8 +2,8 @@ const robot = require('robotjs');
 
 
 // The middle of the number 1 in numpad
-const NUMAPAD_CALIBRATION_XY = {x:25, y:180}
-const DISTANCE_BEETWEEN_NUMBERS = 60; // Assume horizontal and vertical distances are the same
+const NUMAPAD_CALIBRATION_XY = {x: 696, y:348}
+const DISTANCE_BEETWEEN_NUMBERS = 100; // Assume horizontal and vertical distances are the same
 const PIN_MAX = 999999;
 const START_AT = 0;
 const END_AT = 9;
