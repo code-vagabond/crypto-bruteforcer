@@ -40,7 +40,7 @@ function click(number) {
             console.log('Inputting PIN ', clickSequence)
             for (let i = 0; i < clickSequence.length; i++){
                 const c = clickSequence.charAt(i);
-                _clickDigit(number)
+                _clickDigit(c)
             }
         }
 }
