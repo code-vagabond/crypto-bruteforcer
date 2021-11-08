@@ -34,22 +34,12 @@ function clickEnter() {
 }
 
 function click(number) {
-<<<<<<< HEAD
     if (number <= PIN_MAX) {
         const clickSequence = generateClickSequence(number)
         console.log('Inputting PIN ', clickSequence)
         for (let i = 0; i < clickSequence.length; i++) {
             const c = clickSequence.charAt(i);
             _clickDigit(c)
-=======
-        if (number <= PIN_MAX) {
-            const clickSequence = generateClickSequence(number)
-            console.log('Inputting PIN ', clickSequence)
-            for (let i = 0; i < clickSequence.length; i++){
-                const c = clickSequence.charAt(i);
-                _clickDigit(c)
-            }
->>>>>>> 4195dc9d2126d39c7e2bb4801831007fb5258f72
         }
     }
 }
